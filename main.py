@@ -1,3 +1,15 @@
+import threading
+import http.server
+import socketserver
+
+# This tricks Render by hosting a fake empty webpage on port 10000
+def run_fake_web_server():
+    handler = http.server.SimpleHTTPRequestHandler
+    with socketserver.TCPServer(("", 10000), handler) as httpd:
+        httpd.serve_forever()
+
+# Start the web server in the background instantly
+threading.Thread(target=run_fake_web_server, daemon=True).start()
 # =========================================================
 # PART 1: DICTIONARY, ENGINE & DATA INITIALIZATION
 # =========================================================
