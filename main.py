@@ -23,10 +23,10 @@ threading.Thread(target=run_fake_web_server, daemon=True).start()
 # =========================================================
 # 2. CONFIG -- EDIT ONLY THE LINE BELOW
 # =========================================================
-BOT_TOKEN = "PASTE_YOUR_NEW_BOT_TOKEN_HERE"
+BOT_TOKEN = "8811939032:AAH9UPOIaCoeiyAxxaKo8t1aTNjrft-pq3Y"
 TELEGRAM_CHANNEL = "@hotuserchat"
 
-if not BOT_TOKEN or BOT_TOKEN == "PASTE_YOUR_NEW_BOT_TOKEN_HERE":
+if not BOT_TOKEN or BOT_TOKEN == "8811939032:AAH9UPOIaCoeiyAxxaKo8t1aTNjrft-pq3Y":
     raise SystemExit("You forgot to paste your bot token into BOT_TOKEN.")
 
 words = [
@@ -100,5 +100,6 @@ if __name__ == "__main__":
             send_telegram_alert(f"@{unique_handle} is taken")
 
         time.sleep(20)
+
 
 
