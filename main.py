@@ -136,11 +136,14 @@ if __name__ == "__main__":
         # Check if the name is completely free on Fragment
         is_free = check_fragment_availability(name)
         
-        if is_free:
+                if is_free:
             print("100% AVAILABLE! 🟢")
-            send_telegram_alert(name)
+            send_telegram_alert(name + " (FREE! 🟢)")
         else:
             print("Taken / NFT Locked 🔴")
+            # This forces the bot to text your channel for EVERY single taken name!
+            send_telegram_alert(name + " (Taken 🔴)")
+
             
         # Crucial 10-second delay so Render doesn't get rate-limited
         time.sleep(10)
